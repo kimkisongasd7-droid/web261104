@@ -1,9 +1,37 @@
 // script.js : 내 영화 평점 통계(콘솔판)
-// 작성자 : 김기송(2551005)
+// 작성자 : 김기송(25)
 
 const titles = ["인터스텔라", "미션 임파서블", "미션 임파서블: 로그네이션", "미션 임파서블: 파이널 레코닝", "미션 임파서블: 폴아웃"];
 const ratings = [8.4, 7.0, 7.2, 7.2, 7.4];
 const years = [2014, 1996, 2015, 2025, 2018];
+
+for(let index in titles) {
+    console.log(`영화 ${index}: ${titles[index]}`)
+}
+
+
+
+const sumsum = (num1, num2) => num1 + num2;
+
+
+const gugudan = dan => {
+    for(let i=1; i <=9; i++){
+        console.log(` ${dan} x ${i} = ${dan*i}`)
+    }
+}
+
+
+
+
+gugudan(sumsum(2, 5));
+
+(function init() {
+    console.log("초기화 실행")
+})();
+
+
+
+
 let sum = 0;
 for (let i = 0; i < ratings.length; i++) {
  sum += ratings[i];
@@ -47,7 +75,7 @@ for(let i = 0; i < titles.length; i++){
 }
 const avgText = average.toFixed(1);
 const best = titles[maxIndex];
-alert(`내 영화 ${titles.length}편, 평균 ${avgText}점, 최고는 ${best}`);
+alert(`내 영화 ${titles.length}편, 평균 ${avgText}점, 최고는 ${best}(${ratings[maxIndex]}점)`);
 
 
 
